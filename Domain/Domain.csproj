@@ -7,4 +7,11 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Enum\" />
+      <Folder Include="Exception\" />
+      <Folder Include="Model\Request\" />
+      <Folder Include="Model\Response\" />
+    </ItemGroup>
+
 </Project>

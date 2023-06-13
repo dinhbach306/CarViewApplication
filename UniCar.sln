@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniCarWebAPI", "UniCarWebAPI\UniCarWebAPI.csproj", "{698DDC15-CF2A-4261-815C-0CF370B8920F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infracstructures", "Infracstructures\Infracstructures.csproj", "{DFC900DB-7A76-4F5F-8378-C8509101A75A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructures", "Infrastructures\Infrastructures.csproj", "{DFC900DB-7A76-4F5F-8378-C8509101A75A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{91743AC0-B0A7-4729-9D04-6E090EED750C}"
 EndProject
