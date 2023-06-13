@@ -17,4 +17,10 @@
       <Folder Include="Model\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+      <ProjectReference Include="..\Infracstructures\Infracstructures.csproj" />
+    </ItemGroup>
+
 </Project>
