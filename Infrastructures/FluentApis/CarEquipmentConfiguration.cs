@@ -8,6 +8,8 @@ public class CarEquipmentConfiguration : IEntityTypeConfiguration<CarEquipment>
 {
     public void Configure(EntityTypeBuilder<CarEquipment> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("car_equipment_tbl");
+        builder.HasKey(x => x.Id).HasName("car_equipment_id");
+
     }
 }
