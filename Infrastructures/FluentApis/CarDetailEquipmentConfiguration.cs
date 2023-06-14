@@ -8,7 +8,6 @@ public class CarDetailEquipmentConfiguration : IEntityTypeConfiguration<CarDetai
 {
     public void Configure(EntityTypeBuilder<CarDetailEquipment> builder)
     {
-        
-        
+        throw new NotImplementedException();
     }
 }

@@ -8,6 +8,6 @@ public class CarImageConfiguration : IEntityTypeConfiguration<CarImage>
 {
     public void Configure(EntityTypeBuilder<CarImage> builder)
     {
-        
+        throw new NotImplementedException();
     }
 }
