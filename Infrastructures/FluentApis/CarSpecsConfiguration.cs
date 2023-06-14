@@ -24,5 +24,9 @@ public class CarSpecsConfiguration : IEntityTypeConfiguration<CarSpecs>
         builder.Property(x => x.Speed).IsRequired().HasPrecision(4, 2);
         builder.Property(x => x.FuelConsumption).IsRequired().HasPrecision(4, 2);
         builder.Property(x => x.Emissions).IsRequired().HasPrecision(4, 2);
+        
+        builder.HasOne(x => x.CarDetail)
+            .WithOne(x => x.CarSpecs)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

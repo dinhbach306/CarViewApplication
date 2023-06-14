@@ -14,7 +14,7 @@ public class CarDetailConfiguration : IEntityTypeConfiguration<CarDetail>
         builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
         builder.Property(x => x.Price).HasPrecision(12, 0).IsRequired();
         builder.Property(x => x.Color).IsRequired();
-        builder.Property(x => x.WheelBase).IsRequired();
+        builder.Property(x => x.WheelBase).IsRequired().HasColumnType("double(10)");
         builder.Property(x => x.Length).IsRequired().HasColumnType("double(10)");
         builder.Property(x => x.Height).IsRequired().HasColumnType("double(10)");
         builder.Property(x => x.Weight).IsRequired().HasColumnType("double(10)");
@@ -27,11 +27,11 @@ public class CarDetailConfiguration : IEntityTypeConfiguration<CarDetail>
             .ValueGeneratedOnUpdate()
             .HasValueGenerator<ModifiedAtTimeGenerator>();
 
-        builder.HasOne(x => x.Car)
+        builder.HasOne<Car>(x => x.Car)
             .WithOne(x => x.CarDetail)
             .HasForeignKey<CarDetail>(x => x.CarId);
         
-        builder.HasOne(x => x.CarSpecs)
+        builder.HasOne<CarSpecs>(x => x.CarSpecs)
             .WithOne(x => x.CarDetail)
             .HasForeignKey<CarDetail>(x => x.CarSpecsId);
 

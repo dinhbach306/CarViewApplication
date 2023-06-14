@@ -9,7 +9,7 @@ public class CarModel : BaseEntity
     public int CarTypeId { get; set; }
     public CarBranch? CarBranch { get; set; }
     public int CarBranchId { get; set; }
-    public CarModel? CarModelSpecs{ get; set; }
-    public int CarModelSpecsId{ get; set; }
+    // public CarModel? CarModelSpecs{ get; set; }
+    // public int CarModelSpecsId{ get; set; }
     public ICollection<Car>? Cars { get; set; }
 }
