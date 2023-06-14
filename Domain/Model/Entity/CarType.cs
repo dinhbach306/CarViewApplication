@@ -1,6 +1,8 @@
-﻿namespace Domain.Model.Entity;
+﻿using Domain.Model.Entity.Base;
 
-public class CarType
+namespace Domain.Model.Entity;
+
+public class CarType : BaseEntity
 {
     public string? Name { get; set; }
     public ICollection<CarModel>? CarModels { get; set; }

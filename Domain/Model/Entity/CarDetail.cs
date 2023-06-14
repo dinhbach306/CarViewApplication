@@ -12,9 +12,9 @@ public class CarDetail : BaseEntity
     public double Height { get; set; }
     public double Weight { get; set; }
     public CarImage? CarImage { get; set; }
-    public int? CarImageId { get; set; }
     public CarSpecs? CarSpecs { get; set; }
     public int? CarSpecsId { get; set; }
     public Car? Car { get; set; }
+    public int? CarId { get; set; }
     public ICollection<CarDetailEquipment>? CarDetailEquipments { get; set; }
 }

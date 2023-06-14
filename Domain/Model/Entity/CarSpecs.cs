@@ -1,12 +1,14 @@
-﻿namespace Domain.Model.Entity;
+﻿using Domain.Model.Entity.Base;
 
-public class CarSpecs
+namespace Domain.Model.Entity;
+
+public class CarSpecs : BaseEntity
 {
     public string? Power { get; set; }
-    public double MaximumTorque { get; set; }
-    public double Acceleration { get; set; }
-    public double Speed { get; set; }
-    public double FuelConsumption { get; set; }
-    public double Emissions { get; set; }
+    public decimal MaximumTorque { get; set; }
+    public decimal Acceleration { get; set; }
+    public decimal Speed { get; set; }
+    public decimal FuelConsumption { get; set; }
+    public decimal Emissions { get; set; }
     public CarDetail? CarDetail { get; set; }
 }

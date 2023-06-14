@@ -8,7 +8,6 @@ public class Car : BaseEntity
     public string? Year { get; set; }
     public string? Description { get; set; }
     public CarDetail? CarDetail { get; set; }
-    public int? CarDetailId { get; set; }
     public CarModel? CarModel { get; set; }
     public int? CarModelId { get; set; }
 }

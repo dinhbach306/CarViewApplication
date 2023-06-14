@@ -8,6 +8,7 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
 {
     public void Configure(EntityTypeBuilder<Car> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("car_tbl");
+        
     }
 }

@@ -8,6 +8,19 @@ public class CarDetailEquipmentConfiguration : IEntityTypeConfiguration<CarDetai
 {
     public void Configure(EntityTypeBuilder<CarDetailEquipment> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("car_detail_equipment_tbl");
+        builder.HasKey(k => new
+        {
+            k.CarDetailId, k.CarEquipmentId
+        });
+        builder
+            .HasOne(x => x.CarDetail)
+            .WithMany(x => x.CarDetailEquipments)
+            .HasForeignKey(x => x.CarDetailId);
+
+        builder
+            .HasOne(x => x.CarEquipment)
+            .WithMany(x => x.CarDetailEquipments)
+            .HasForeignKey(x => x.CarEquipmentId);
     }
 }
