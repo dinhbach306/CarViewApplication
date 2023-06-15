@@ -7,10 +7,10 @@ public class CarDetail : BaseEntity
     public string? Name { get; set; }
     public decimal? Price { get; set; }
     public string? Color { get; set; }
-    public double WheelBase { get; set; }
-    public double Length { get; set; }
-    public double Height { get; set; }
-    public double Weight { get; set; }
+    public float WheelBase { get; set; }
+    public float Length { get; set; }
+    public float Height { get; set; }
+    public float Weight { get; set; }
     public CarImage? CarImage { get; set; }
     public CarSpecs? CarSpecs { get; set; }
     public int? CarSpecsId { get; set; }

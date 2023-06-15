@@ -14,10 +14,10 @@ public class CarDetailConfiguration : IEntityTypeConfiguration<CarDetail>
         builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
         builder.Property(x => x.Price).HasPrecision(12, 0).IsRequired();
         builder.Property(x => x.Color).IsRequired();
-        builder.Property(x => x.WheelBase).IsRequired().HasColumnType("double(10)");
-        builder.Property(x => x.Length).IsRequired().HasColumnType("double(10)");
-        builder.Property(x => x.Height).IsRequired().HasColumnType("double(10)");
-        builder.Property(x => x.Weight).IsRequired().HasColumnType("double(10)");
+        builder.Property(x => x.WheelBase).IsRequired().HasColumnType("float");
+        builder.Property(x => x.Length).IsRequired().HasColumnType("float");
+        builder.Property(x => x.Height).IsRequired().HasColumnType("float");
+        builder.Property(x => x.Weight).IsRequired().HasColumnType("float");
         builder.Property(x => x.Version).ValueGeneratedOnAdd().HasDefaultValue(1).IsConcurrencyToken();
         builder.Property(x => x.IsDeleted).ValueGeneratedOnAdd().HasDefaultValue(false);
         builder.Property(x => x.CreatedDate).HasColumnType("datetime")

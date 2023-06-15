@@ -21,12 +21,13 @@ public class CarSpecsConfiguration : IEntityTypeConfiguration<CarSpecs>
             .HasValueGenerator<ModifiedAtTimeGenerator>();
         builder.Property(x => x.Power).IsRequired().HasMaxLength(100);
         builder.Property(x => x.MaximumTorque).IsRequired().HasPrecision(4, 2);
+        builder.Property(x => x.Acceleration).IsRequired().HasPrecision(4, 2);
         builder.Property(x => x.Speed).IsRequired().HasPrecision(4, 2);
         builder.Property(x => x.FuelConsumption).IsRequired().HasPrecision(4, 2);
         builder.Property(x => x.Emissions).IsRequired().HasPrecision(4, 2);
         
         builder.HasOne(x => x.CarDetail)
             .WithOne(x => x.CarSpecs)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
