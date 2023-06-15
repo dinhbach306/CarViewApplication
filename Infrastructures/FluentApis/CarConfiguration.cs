@@ -30,6 +30,6 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
         
         builder.HasOne(x => x.CarDetail)
             .WithOne(x => x.Car)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -5,9 +5,13 @@ using UniCar;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+//Implement infrastructure Dependency Injection Container
 builder.Services.AddWebApiService();
 builder.Services.AddInfrastructures(builder.Configuration);
+
+
+
+
 
 var app = builder.Build();
 
