@@ -1,10 +1,15 @@
-﻿using Domain.Model.Entity.Base;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Model.Entity.Base;
+using Microsoft.AspNetCore.Http;
 
 namespace Domain.Model.Entity;
 
 public class CarBranch : BaseEntity
 {
     public string? Name { get; set; }
-    public byte[]? ImageLogo { get; set; }
+    public string? ImageLogo { get; set; }
     public ICollection<CarModel>? CarModels { get; set; }
+    
+    [NotMapped]
+    public IFormFile? ImageFile { get; set; }
 }
