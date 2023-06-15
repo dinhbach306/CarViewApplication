@@ -1,4 +1,5 @@
-﻿using Application.Repository;
+﻿using Application.IRepository;
+using Application.IService;
 
 namespace Application;
 
