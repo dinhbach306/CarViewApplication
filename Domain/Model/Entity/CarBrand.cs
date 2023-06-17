@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Domain.Model.Entity;
 
-public class CarBranch : BaseEntity
+public class CarBrand : BaseEntity
 {
     public string? Name { get; set; }
     public string? ImageLogo { get; set; }

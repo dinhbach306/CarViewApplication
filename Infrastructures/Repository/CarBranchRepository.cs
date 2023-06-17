@@ -1,10 +1,24 @@
 ﻿using Application.Repository;
+using Domain.Model.Entity;
 
 namespace Infrastructures.Repository;
 
-public class CarBranchRepository : ICarBranchRepository
+public class CarBrandRepository : ICarBrandRepository
 {
-    public CarBranchRepository(ApplicationDbContext context)
+    private readonly ApplicationDbContext _context;
+    public CarBrandRepository(ApplicationDbContext context)
     {
+        _context= context;
+    }
+
+    public CarBrand? GetCarBrandById(int id)
+    {
+        var carBrand = _context.CarBranches.SingleOrDefault(c => c.Id == id);
+        return carBrand;
+    }
+
+    public ICollection<CarBrand>? GetCarBrands()
+    {
+        return _context.CarBranches.ToList();
     }
 }

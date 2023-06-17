@@ -19,11 +19,11 @@ public class CarImageConfiguration : IEntityTypeConfiguration<CarImage>
         builder.Property(x => x.ModifiedDate).HasColumnType("datetime")
             .ValueGeneratedOnUpdate()
             .HasValueGenerator<ModifiedAtTimeGenerator>();
-        builder.Property(x => x.ImageCar1).HasColumnType("varchar");
-        builder.Property(x => x.ImageCar2).HasColumnType("varchar");
-        builder.Property(x => x.ImageCar3).HasColumnType("varchar");
-        builder.Property(x => x.ImageCar4).HasColumnType("varchar");
-        builder.Property(x => x.ImageCar5).HasColumnType("varchar");
+        builder.Property(x => x.ImageCar1).HasColumnType("varchar").HasMaxLength(200);
+        builder.Property(x => x.ImageCar2).HasColumnType("varchar").HasMaxLength(200);
+        builder.Property(x => x.ImageCar3).HasColumnType("varchar").HasMaxLength(200);
+        builder.Property(x => x.ImageCar4).HasColumnType("varchar").HasMaxLength(200);
+        builder.Property(x => x.ImageCar5).HasColumnType("varchar").HasMaxLength(200);
 
         builder.HasOne(x => x.CarDetail)
             .WithOne(x => x.CarImage)

@@ -13,7 +13,7 @@ public class CarDetailConfiguration : IEntityTypeConfiguration<CarDetail>
         builder.HasKey(x => x.Id).HasName("car_detail_id");
         builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
         builder.Property(x => x.Price).HasPrecision(12, 0).IsRequired();
-        builder.Property(x => x.Color).IsRequired();
+        builder.Property(x => x.Color).IsRequired().HasMaxLength(20);
         builder.Property(x => x.WheelBase).IsRequired().HasColumnType("float");
         builder.Property(x => x.Length).IsRequired().HasColumnType("float");
         builder.Property(x => x.Height).IsRequired().HasColumnType("float");

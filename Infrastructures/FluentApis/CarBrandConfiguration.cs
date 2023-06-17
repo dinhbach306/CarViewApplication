@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.FluentApis;
 
-public class CarBranchConfiguration : IEntityTypeConfiguration<CarBranch>
+public class CarBrandConfiguration : IEntityTypeConfiguration<CarBrand>
 {
-    public void Configure(EntityTypeBuilder<CarBranch> builder)
+    public void Configure(EntityTypeBuilder<CarBrand> builder)
     {
         builder.ToTable("car_brand_tbl");
         builder.HasKey(x => x.Id).HasName("car_brand_id");
         builder.Property(x => x.Name).IsRequired().HasMaxLength(100).IsRequired();
-        builder.Property(x => x.ImageLogo).HasColumnType("varchar");
+        builder.Property(x => x.ImageLogo).HasColumnType("varchar").HasMaxLength(50);
         builder.Property(x => x.Version).ValueGeneratedOnAdd().HasDefaultValue(1).IsConcurrencyToken();
         builder.Property(x => x.IsDeleted).ValueGeneratedOnAdd().HasDefaultValue(false);
         builder.Property(x => x.CreatedDate).HasColumnType("datetime")
@@ -23,7 +23,7 @@ public class CarBranchConfiguration : IEntityTypeConfiguration<CarBranch>
             .HasValueGenerator<ModifiedAtTimeGenerator>();
 
         builder.HasMany(x => x.CarModels)
-            .WithOne(x => x.CarBranch)
+            .WithOne(x => x.CarBrand)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

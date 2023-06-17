@@ -8,14 +8,14 @@ namespace Infrastructures
         private readonly ApplicationDbContext _context;
 
         public UnitOfWork(ApplicationDbContext context,
-            ICarBranchRepository carBranchRepository, IFileService fileService)
+            ICarBrandRepository carBranchRepository /*, IFileService fileService*/)
         {
             _context = context;
-            CarBranchRepository = carBranchRepository;
-            FileService = fileService;
+            CarBrandRepository = carBranchRepository;
+            //FileService = fileService;
         }
 
-        public ICarBranchRepository CarBranchRepository { get; }
+        public ICarBrandRepository CarBrandRepository { get; }
         public IFileService FileService { get; }
 
         public async Task<int> SaveChangesAsync()
