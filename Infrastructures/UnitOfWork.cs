@@ -1,5 +1,7 @@
 ﻿using Application;
+using Application.IRepository;
 using Application.Repository;
+using Infrastructures.Repository;
 
 namespace Infrastructures
 {
@@ -8,15 +10,23 @@ namespace Infrastructures
         private readonly ApplicationDbContext _context;
 
         public UnitOfWork(ApplicationDbContext context,
-            ICarBrandRepository carBranchRepository /*, IFileService fileService*/)
+            ICarBrandRepository carBrandRepository /*, IFileService fileService*/,
+            ICarTypeRepository carTypeRepository, ICarModelRepository carModelRepository)
         {
             _context = context;
-            CarBrandRepository = carBranchRepository;
+            CarBrandRepository = carBrandRepository;
+            CarTypeRepository = carTypeRepository;
+            CarModelRepository = carModelRepository;
             //FileService = fileService;
         }
 
         public ICarBrandRepository CarBrandRepository { get; }
+
         public IFileService FileService { get; }
+
+        public ICarTypeRepository CarTypeRepository { get; }
+
+        public ICarModelRepository CarModelRepository { get; }
 
         public async Task<int> SaveChangesAsync()
         {

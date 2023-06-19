@@ -6,4 +6,5 @@ public class CarType : BaseEntity
 {
     public string? Name { get; set; }
     public ICollection<CarModel>? CarModels { get; set; }
+
 }

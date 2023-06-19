@@ -1,4 +1,5 @@
 ﻿using Application;
+using Application.IRepository;
 using Application.Repository;
 using Application.Service;
 using Infrastructures;
@@ -17,8 +18,10 @@ public static class DependencyInjection
         services.AddHttpContextAccessor();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICarBrandRepository, CarBrandRepository>();
-
+        services.AddScoped<ICarTypeRepository, CarTypeRepository>();
+        services.AddScoped<ICarModelRepository, CarModelRepository>();
         services.AddScoped<CarBrandService>();
+        services.AddScoped<CarTypeService>();
 
     }
 }

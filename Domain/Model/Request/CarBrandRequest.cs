@@ -1,6 +1,6 @@
 ﻿namespace Domain.Model.Request;
 
-public class CarBranchRequest
+public class CarBrandRequest
 {
     public string? Name { get; set; }
     public string? ImageLogo { get; set; }

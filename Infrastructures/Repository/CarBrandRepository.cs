@@ -13,12 +13,12 @@ public class CarBrandRepository : ICarBrandRepository
 
     public CarBrand? GetCarBrandById(int id)
     {
-        var carBrand = _context.CarBranches.SingleOrDefault(c => c.Id == id);
+        var carBrand = _context.CarBrands.SingleOrDefault(c => c.Id == id);
         return carBrand;
     }
 
     public ICollection<CarBrand>? GetCarBrands()
     {
-        return _context.CarBranches.ToList();
+        return _context.CarBrands.ToList();
     }
 }

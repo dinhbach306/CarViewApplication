@@ -4,5 +4,5 @@ namespace Application.IService;
 
 public interface ICarBrandService
 {
-    ICollection<CarBrand> GetListOfAllBrand();
+    ICollection<CarBrand>? GetListOfAllBrand();
 }

@@ -11,7 +11,7 @@ public class ApplicationDbContext : DbContext
 
     // Init DBSet for each entity
     public DbSet<Car>? Cars { get; set; }
-    public DbSet<CarBrand>? CarBranches { get; set; }
+    public DbSet<CarBrand>? CarBrands { get; set; }
     public DbSet<CarDetail>? CarDetails { get; set; }
     public DbSet<CarDetailEquipment>? CarDetailEquipments { get; set; }
     public DbSet<CarEquipment>? CarEquipments { get; set; }
