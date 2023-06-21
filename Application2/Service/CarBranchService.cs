@@ -16,12 +16,13 @@ public class CarBranchService : ICarBranchService
 
     public async Task AddCarBranch(CarBranch model)
     {
-        //upload image to azure blob storage
+        //get container instance
         var containerInstance = _blobServiceClient.GetBlobContainerClient("carpicture");
         // get file name from request and upload to azure blob storage
-        var blobName = model.ImageLogo?.FileName;
+        var blobName =  $"{Guid.NewGuid()}{model.ImageLogo?.FileName}";
         // local file path
         var blobInstance = containerInstance.GetBlobClient(blobName);
+        
         // upload file to azure blob storage
         await blobInstance.UploadAsync(model.ImageLogo?.OpenReadStream());
         
