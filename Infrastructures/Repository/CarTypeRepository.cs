@@ -1,8 +1,11 @@
 ﻿using Application.IRepository;
 using Domain.Model.Entity;
 using Domain.Model.Entity.Base;
+using Domain.Model.Request;
+using Infrastructures.Mapper;
 using Infrastructures.Utils;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,41 +18,55 @@ namespace Infrastructures.Repository
     public class CarTypeRepository : ICarTypeRepository
     {
         private readonly ApplicationDbContext _context;
-
-        public CarTypeRepository(ApplicationDbContext context)
+        private readonly CarTypeMapper _mapper;
+        public CarTypeRepository(ApplicationDbContext context, CarTypeMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public CarType AddNewCarType(CarType carType)
+        public int AddNewCarType(CarTypeRequest model)
         {
-            CarType? carTypeAdd = null;
-            var carTypeDB = _context.CarTypes.SingleOrDefault(c => c.Id == carType.Id);
+            //CarType? carTypeAdd = null;
+            //var carTypeDB = _context.CarTypes?.SingleOrDefault(c => c.Id == carType.Id);
 
-            if(carTypeDB == null)
+            //if(carTypeDB == null)
+            //{
+            //CreatedAtTimeGenerator createdAtTimeGenerator = new CreatedAtTimeGenerator();
+            //carTypeAdd = new CarType
+            //{
+            //    Id = carType.Id, 
+            //    Name = carType.Name,
+            //    CreatedDate = createdAtTimeGenerator.Next(_context.Entry(carType)).UtcDateTime,
+            //    ModifiedDate = createdAtTimeGenerator.Next(_context.Entry(carType)).UtcDateTime,
+            //    Version = 1,
+            //    IsDeleted = false
+            //};
+            //_context.Add(carTypeAdd);
+            //_context.SaveChanges();
+            //}
+            try
             {
-                CreatedAtTimeGenerator createdAtTimeGenerator = new CreatedAtTimeGenerator();
-                carTypeAdd = new CarType
+                var carType = _mapper.CarTypeRequestToCar(model);
+                if (!carType.Name.IsNullOrEmpty())
                 {
-                    Id = carType.Id, 
-                    Name = carType.Name,
-                    CreatedDate = createdAtTimeGenerator.Next(_context.Entry(carType)).UtcDateTime,
-                    ModifiedDate = createdAtTimeGenerator.Next(_context.Entry(carType)).UtcDateTime,
-                    Version = 1,
-                    IsDeleted = false
-                };
-                _context.Add(carTypeAdd);
-                _context.SaveChanges();
+                    _context.CarTypes?.Add(carType);
+                    _context.SaveChanges();
+                    return 2;
+                }
+                else return 1;
+            }catch(Exception ex)
+            {
+                return 0;
             }
-                return carTypeAdd;
         }
 
-        public ICollection<CarType>? GetAllCarType()
+        public ICollection<CarTypeRequest>? GetAllCarType()
         {
-            var carTypes = _context.CarTypes.ToList();
-            return carTypes;
+            var carTypes = _context.CarTypes?.ToList();
+            return (ICollection<CarTypeRequest>?)carTypes;
         }
 
-        
+
     }
 }

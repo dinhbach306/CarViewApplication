@@ -32,6 +32,7 @@ public class CarBrandRepository : ICarBrandRepository
         {
             var carBrand = _carBrandMapper.CarBrandRequestToCar(model);
             _context.CarBrands?.Add(carBrand);
+            _context.SaveChanges();
             return true;
         }
         catch (Exception e)

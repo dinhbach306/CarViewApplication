@@ -1,6 +1,7 @@
 ﻿using Application.IRepository;
 using Application.IService;
 using Domain.Model.Entity;
+using Domain.Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +19,26 @@ namespace Application.Service
             _unitOfWork = unitOfWork;
         }
 
-        public ICollection<CarType> GetListCarType()
+        public (int Status, ICollection<CarTypeRequest>? List) GetListCarType()
         {
-            return _unitOfWork.CarTypeRepository.GetAllCarType();
+            try
+            {
+                var list = _unitOfWork.CarTypeRepository?.GetAllCarType();
+
+                if (list == null) return (1, null);
+                else return (2 , list);
+            }catch(Exception ex)
+            {
+                return (0, null);
+            }
         }
 
-        public CarType CreateNewCarType(CarType carType)
+        public (int Status, String Msg) CreateNewCarType(CarTypeRequest carType)
         {
-            return _unitOfWork.CarTypeRepository.AddNewCarType(carType);
+            var status = _unitOfWork.CarTypeRepository.AddNewCarType(carType);
+            if (status == 0) return (status, "Error when runtime! Please try again!");//Loi he thong
+            else if (status == 1) return (status, "Invalid input! Please try again!");//Loi nguoi dung
+            else return (status, $"Type {carType.Name} was added successfully!!");
         }
     }
 }

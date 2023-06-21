@@ -19,7 +19,7 @@ public class CarBrandService : ICarBrandService
         return _unitOfWork.CarBrandRepository.GetCarBrands();
     }
 
-    public bool AddCarImage(CarBrandRequest carBrandRequest)
+    public bool CreateCarBrandImage(CarBrandRequest carBrandRequest)
     {
         return _unitOfWork.CarBrandRepository.AddCarBrandImage(carBrandRequest);
     }

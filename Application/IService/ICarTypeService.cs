@@ -1,4 +1,5 @@
 ﻿using Domain.Model.Entity;
+using Domain.Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace Application.IService
 {
     public interface ICarTypeService
     {
-        ICollection<CarType>? GetListCarType();
+        public (int Status, ICollection<CarTypeRequest>? List) GetListCarType();
+
+        public (int Status, string Msg) CreateNewCarType(CarTypeRequest carType);
     }
 }

@@ -42,11 +42,27 @@ public class CarController : ControllerBase
     //Add car type feature
     [HttpPost]
     [Route(EndpointConstant.Car.CarTypeEndpoint)]
-    public IActionResult AddCarType(CarType type)
+    public IActionResult AddCarType(CarTypeRequest type)
     {
         try
         {
             var carType = _typeService.CreateNewCarType(type);
+            return StatusCode(StatusCodes.Status200OK, carType);
+        }
+        catch
+        {
+            return StatusCode(StatusCodes.Status400BadRequest);
+        }
+    }
+
+    //Get car type feature
+    [HttpGet]
+    [Route(EndpointConstant.Car.CarTypeEndpoint + "/getAllCarType")]
+    public IActionResult GetCarType()
+    {
+        try
+        {
+            var carType = _typeService.GetListCarType();
             return StatusCode(StatusCodes.Status200OK, carType);
         }
         catch
@@ -69,11 +85,11 @@ public class CarController : ControllerBase
         if (model.ImageFile != null)
         {
             var fileResult = _fileService.SaveImage(model.ImageFile);
-            if (fileResult.Item1 == 1)
+            if (fileResult.Status == 1)
             {
-                model.ImageLogo = fileResult.Item2; // getting name of image
+                model.ImageLogo = fileResult.Msg; // getting name of image
             }
-            var carBrandResult = _brandService.AddCarImage(model);
+            var carBrandResult = _brandService.CreateCarBrandImage(model);
             if (carBrandResult)
             {
                 status.StatusCode = 1;

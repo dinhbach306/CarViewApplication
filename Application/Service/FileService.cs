@@ -13,7 +13,7 @@ public class FileService : IFileService
         _environment = environment;
     }
 
-    public Tuple<int, string> SaveImage(IFormFile imageFile)
+    public (int Status, string Msg) SaveImage(IFormFile imageFile)
     {
         try
         {
@@ -35,7 +35,7 @@ public class FileService : IFileService
             {
                 string msg = $"Only {string.Join(",", allowedExtensions)} extensions are allowed";
 
-                return new Tuple<int, string>(0, msg);
+                return new (0, msg);
             }
 
             string uniqueString = Guid.NewGuid().ToString();
@@ -46,11 +46,11 @@ public class FileService : IFileService
             var stream = new FileStream(fileWithPath, FileMode.Create);
             imageFile.CopyTo(stream);
             stream.Close();
-            return new Tuple<int, string>(1, newFileName);
+            return (1, newFileName);
         }
         catch (Exception e)
         {
-            return new Tuple<int, string>(0, "Error has occured");
+            return (0, "Error has occured");
         }
     }
 

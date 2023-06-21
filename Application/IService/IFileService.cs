@@ -4,6 +4,6 @@ namespace Application.Repository;
 
 public interface IFileService
 {
-    public Tuple<int, string> SaveImage(IFormFile formFile);
+    public (int Status, string Msg) SaveImage(IFormFile formFile);
     public bool DeleteImage(string fileName);
 }

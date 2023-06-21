@@ -26,5 +26,6 @@ public static class DependencyInjection
         services.AddScoped<CarTypeService>();
         services.AddScoped<FileService>();
         services.AddScoped<CarBrandMapper>();
+        services.AddScoped<CarTypeMapper>();
     }
 }

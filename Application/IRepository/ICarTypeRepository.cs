@@ -1,4 +1,5 @@
 ﻿using Domain.Model.Entity;
+using Domain.Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace Application.IRepository
 {
     public interface ICarTypeRepository
     {
-        ICollection<CarType>? GetAllCarType();
+        ICollection<CarTypeRequest>? GetAllCarType();
 
-        CarType AddNewCarType(CarType carType);
+        int AddNewCarType(CarTypeRequest model);
 
     }
 }
