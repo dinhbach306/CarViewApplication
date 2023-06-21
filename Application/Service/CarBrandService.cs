@@ -1,5 +1,6 @@
 ﻿using Application.IService;
 using Domain.Model.Entity;
+using Domain.Model.Request;
 
 namespace Application.Service;
 
@@ -13,8 +14,13 @@ public class CarBrandService : ICarBrandService
     }
 
 
-    public ICollection<CarBrand> GetListOfAllBrand()
+    public ICollection<CarBrand>? GetListOfAllBrand()
     {
         return _unitOfWork.CarBrandRepository.GetCarBrands();
+    }
+
+    public bool AddCarImage(CarBrandRequest carBrandRequest)
+    {
+        return _unitOfWork.CarBrandRepository.AddCarBrandImage(carBrandRequest);
     }
 }

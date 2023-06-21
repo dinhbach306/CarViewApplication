@@ -3,6 +3,7 @@ using Application.IRepository;
 using Application.Repository;
 using Application.Service;
 using Infrastructures;
+using Infrastructures.Mapper;
 using Infrastructures.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,11 +18,13 @@ public static class DependencyInjection
         services.AddSwaggerGen();
         services.AddHttpContextAccessor();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IFileService, FileService>();
         services.AddScoped<ICarBrandRepository, CarBrandRepository>();
         services.AddScoped<ICarTypeRepository, CarTypeRepository>();
         services.AddScoped<ICarModelRepository, CarModelRepository>();
         services.AddScoped<CarBrandService>();
         services.AddScoped<CarTypeService>();
-
+        services.AddScoped<FileService>();
+        services.AddScoped<CarBrandMapper>();
     }
 }

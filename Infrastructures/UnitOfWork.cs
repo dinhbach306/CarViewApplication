@@ -10,14 +10,14 @@ namespace Infrastructures
         private readonly ApplicationDbContext _context;
 
         public UnitOfWork(ApplicationDbContext context,
-            ICarBrandRepository carBrandRepository /*, IFileService fileService*/,
+            ICarBrandRepository carBrandRepository, IFileService fileService,
             ICarTypeRepository carTypeRepository, ICarModelRepository carModelRepository)
         {
             _context = context;
             CarBrandRepository = carBrandRepository;
             CarTypeRepository = carTypeRepository;
             CarModelRepository = carModelRepository;
-            //FileService = fileService;
+            FileService = fileService;
         }
 
         public ICarBrandRepository CarBrandRepository { get; }
