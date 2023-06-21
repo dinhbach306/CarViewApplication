@@ -23,13 +23,23 @@ public class CarBranchController : ControllerBase
     [HttpPost("add")]
     public async Task<Status> Add([FromForm]CarBranchRequest request) //[FromForm] is request type multipart
     {
-        var mapper = new CarBrandMapper();
-        var model = mapper.CarBranchRequestToCar(request);
-        await _carBranchService.AddCarBranch(model);
-
-        return new Status(HttpStatusCode.OK,
-            "Success",
-            model
+        try
+        {
+            var mapper = new CarBrandMapper();
+            var model = mapper.CarBranchRequestToCar(request);
+            await _carBranchService.AddCarBranch(model);
+        
+            return new Status(HttpStatusCode.OK,
+                "Success",
+                model
             );
+        }
+        catch (Exception e)
+        {
+            return new Status(HttpStatusCode.InternalServerError,
+                "Failed",
+                e.Message
+            );
+        }
     }
 }
