@@ -20,10 +20,5 @@
       </PackageReference>
       <PackageReference Include="Riok.Mapperly" Version="2.8.0" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Application\Application.csproj" />
-      <ProjectReference Include="..\Domain\Domain.csproj" />
-    </ItemGroup>
-
+    
 </Project>

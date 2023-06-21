@@ -1,4 +1,7 @@
 
+using Application;
+using Application.IService;
+using Application.Service;
 using Infrastructures;
 using UniCar;
 
@@ -8,7 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddWebApiService();
 builder.Services.AddInfrastructures(builder.Configuration);
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
