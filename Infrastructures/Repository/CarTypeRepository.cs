@@ -6,6 +6,7 @@ using Infrastructures.Mapper;
 using Infrastructures.Utils;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.IdentityModel.Tokens;
+using Riok.Mapperly.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,10 +62,11 @@ namespace Infrastructures.Repository
             }
         }
 
-        public ICollection<CarTypeRequest>? GetAllCarType()
+        public List<string>? GetAllCarType()
         {
-            var carTypes = _context.CarTypes?.ToList();
-            return (ICollection<CarTypeRequest>?)carTypes;
+            var list = _context.CarTypes?.ToList();
+            var carType = list?.Select(x => x.Name).ToList();
+            return carType;
         }
 
 
