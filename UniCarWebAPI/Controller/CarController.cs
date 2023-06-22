@@ -63,7 +63,7 @@ public class CarController : ControllerBase
         try
         {
             var carType = _typeService.GetListCarType();
-            return StatusCode(StatusCodes.Status200OK, carType.List);
+            return StatusCode(StatusCodes.Status200OK, carType);
         }
         catch
         {

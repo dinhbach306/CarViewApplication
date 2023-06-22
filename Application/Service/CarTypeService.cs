@@ -19,7 +19,7 @@ namespace Application.Service
             _unitOfWork = unitOfWork;
         }
 
-        public (int Status, List<string>? List) GetListCarType()    
+        public (int Status, ICollection<CarTypeRequest>? List) GetListCarType()
         {
             try
             {

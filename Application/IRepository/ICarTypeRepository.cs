@@ -10,7 +10,7 @@ namespace Application.IRepository
 {
     public interface ICarTypeRepository
     {
-        List<string>? GetAllCarType();
+        ICollection<CarTypeRequest>? GetAllCarType();
 
         int AddNewCarType(CarTypeRequest model);
 

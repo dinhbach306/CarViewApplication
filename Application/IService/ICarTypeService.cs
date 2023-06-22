@@ -10,7 +10,7 @@ namespace Application.IService
 {
     public interface ICarTypeService
     {
-        public (int Status, List<string>? List) GetListCarType();
+        public (int Status, ICollection<CarTypeRequest>? List) GetListCarType();
 
         public (int Status, string Msg) CreateNewCarType(CarTypeRequest carType);
     }
