@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Domain.Model.Request;
 
-public class CarBranchRequest
+public class CarBrandRequest
 {
     public string? Name { get; set; }
     

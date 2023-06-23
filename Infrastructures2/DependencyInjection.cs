@@ -15,8 +15,8 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructures(this IServiceCollection services, IConfiguration config)
     {
         services.AddTransient<IUnitOfWork, UnitOfWork>();
-        services.AddTransient<ICarBranchRepository, CarBranchRepository>();
-        services.AddTransient<ICarBranchService, CarBranchService>();
+        services.AddTransient<ICarBrandRepository, CarBrandRepository>();
+        services.AddTransient<ICarBrandService, CarBrandService>();
         
         //FileService
         services.AddScoped(_ => new BlobServiceClient(config.GetConnectionString("AzureBlobStorage")));

@@ -8,17 +8,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructures.Repository;
 
-public class CarBranchRepository : ICarBranchRepository
+public class CarBrandRepository : ICarBrandRepository
 {
-    private readonly DbSet<CarBranch> _dbSet;
+    private readonly DbSet<CarBrand> _dbSet;
     // private readonly CarBrandMapper _mapper;
-    public CarBranchRepository(ApplicationDbContext context)
+    public CarBrandRepository(ApplicationDbContext context)
     {
-        _dbSet = context.Set<CarBranch>();
+        _dbSet = context.Set<CarBrand>();
         // _mapper = mapper;
     }
 
-    public async Task Add(CarBranch model)
+    public async Task Add(CarBrand model)
     {
         try
         {

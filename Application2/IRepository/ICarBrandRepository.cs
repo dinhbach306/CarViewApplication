@@ -2,7 +2,7 @@
 
 namespace Application.IRepository;
 
-public interface ICarBranchRepository
+public interface ICarBrandRepository
 {
-    Task Add(CarBranch model);
+    Task Add(CarBrand model);
 }

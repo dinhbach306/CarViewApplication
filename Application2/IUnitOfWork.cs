@@ -5,6 +5,6 @@ namespace Application;
 
 public interface IUnitOfWork
 {
-    public ICarBranchRepository CarBranchRepository { get; }
+    public ICarBrandRepository CarBrandRepository { get; }
     public Task<int> SaveChangesAsync();
 }

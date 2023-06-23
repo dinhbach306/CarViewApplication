@@ -18,9 +18,9 @@ public class CarModelConfiguration : IEntityTypeConfiguration<CarModel>
             .WithMany(x => x.CarModels)
             .HasForeignKey(x => x.CarTypeId);
         
-        builder.HasOne(x => x.CarBranch)
+        builder.HasOne(x => x.CarBrand)
             .WithMany(x => x.CarModels)
-            .HasForeignKey(x => x.CarBranchId);
+            .HasForeignKey(x => x.CarBrandId);
 
         // builder.HasOne(x => x.CarModelSpecs)
         //     .WithOne(x => x.CarModelSpecs)

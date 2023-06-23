@@ -72,7 +72,7 @@ namespace Infrastructures2.Migrations
                     b.ToTable("car_tbl", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Model.Entity.CarBranch", b =>
+            modelBuilder.Entity("Domain.Model.Entity.CarBrand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -288,7 +288,7 @@ namespace Infrastructures2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CarBranchId")
+                    b.Property<int>("CarBrandId")
                         .HasColumnType("int");
 
                     b.Property<int>("CarTypeId")
@@ -318,7 +318,7 @@ namespace Infrastructures2.Migrations
                     b.HasKey("Id")
                         .HasName("car_model_id");
 
-                    b.HasIndex("CarBranchId");
+                    b.HasIndex("CarBrandId");
 
                     b.HasIndex("CarTypeId");
 
@@ -474,9 +474,9 @@ namespace Infrastructures2.Migrations
 
             modelBuilder.Entity("Domain.Model.Entity.CarModel", b =>
                 {
-                    b.HasOne("Domain.Model.Entity.CarBranch", "CarBranch")
+                    b.HasOne("Domain.Model.Entity.CarBrand", "CarBrand")
                         .WithMany("CarModels")
-                        .HasForeignKey("CarBranchId")
+                        .HasForeignKey("CarBrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -486,7 +486,7 @@ namespace Infrastructures2.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CarBranch");
+                    b.Navigation("CarBrand");
 
                     b.Navigation("CarType");
                 });
@@ -496,7 +496,7 @@ namespace Infrastructures2.Migrations
                     b.Navigation("CarDetail");
                 });
 
-            modelBuilder.Entity("Domain.Model.Entity.CarBranch", b =>
+            modelBuilder.Entity("Domain.Model.Entity.CarBrand", b =>
                 {
                     b.Navigation("CarModels");
                 });

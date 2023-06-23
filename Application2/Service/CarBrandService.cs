@@ -4,17 +4,17 @@ using Domain.Model.Entity;
 
 namespace Application.Service;
 
-public class CarBranchService : ICarBranchService
+public class CarBrandService : ICarBrandService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly BlobServiceClient _blobServiceClient;
-    public CarBranchService(IUnitOfWork unitOfWork, BlobServiceClient blobServiceClient)
+    public CarBrandService(IUnitOfWork unitOfWork, BlobServiceClient blobServiceClient)
     {
         _unitOfWork = unitOfWork;
         _blobServiceClient = blobServiceClient;
     }
 
-    public async Task AddCarBranch(CarBranch model)
+    public async Task AddCarBrand(CarBrand model)
     {
         //get container instance
         var containerInstance = _blobServiceClient.GetBlobContainerClient("carpicture");
@@ -35,7 +35,7 @@ public class CarBranchService : ICarBranchService
         //return url of image except https://
         model.ImageLogoUrl = blobUrl;
         model.Name = model.Name;
-        await _unitOfWork.CarBranchRepository.Add(model);
+        await _unitOfWork.CarBrandRepository.Add(model);
         await _unitOfWork.SaveChangesAsync();
     }
 }

@@ -7,5 +7,5 @@ namespace Infrastructures.Mapper;
 [Mapper]
 public partial class CarBrandMapper
 {
-    public partial CarBranch CarBranchRequestToCar(CarBranchRequest carBranch);
+    public partial CarBrand CarBrandRequestToCar(CarBrandRequest carBranch);
 }

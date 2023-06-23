@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.FluentApis;
 
-public class CarBranchConfiguration : IEntityTypeConfiguration<CarBranch>
+public class CarBrandConfiguration : IEntityTypeConfiguration<CarBrand>
 {
-    public void Configure(EntityTypeBuilder<CarBranch> builder)
+    public void Configure(EntityTypeBuilder<CarBrand> builder)
     {
         builder.ToTable("car_brand_tbl");
         builder.HasKey(x => x.Id).HasName("car_brand_id");
@@ -16,7 +16,7 @@ public class CarBranchConfiguration : IEntityTypeConfiguration<CarBranch>
         builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         
         builder.HasMany(x => x.CarModels)
-            .WithOne(x => x.CarBranch)
+            .WithOne(x => x.CarBrand)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

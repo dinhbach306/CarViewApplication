@@ -10,24 +10,24 @@ using UniCar.Endpoint;
 namespace UniCar.Controller;
 [ApiController]
 [Route(EndpointConstant.Car.CarBranchEndpoint)]
-public class CarBranchController : ControllerBase
+public class CarBrandController : ControllerBase
 {
    
-    private readonly ICarBranchService _carBranchService;
+    private readonly ICarBrandService _carBrandService;
     
-    public CarBranchController(ICarBranchService carBranchService)
+    public CarBrandController(ICarBrandService carBrandService)
     {
-        _carBranchService = carBranchService;
+        _carBrandService = carBrandService;
     }
 
     [HttpPost("add")]
-    public async Task<Status> Add([FromForm]CarBranchRequest request) //[FromForm] is request type multipart
+    public async Task<Status> Add([FromForm]CarBrandRequest request) //[FromForm] is request type multipart
     {
         try
         {
             var mapper = new CarBrandMapper();
-            var model = mapper.CarBranchRequestToCar(request);
-            await _carBranchService.AddCarBranch(model);
+            var model = mapper.CarBrandRequestToCar(request);
+            await _carBrandService.AddCarBrand(model);
         
             return new Status(HttpStatusCode.OK,
                 "Success",

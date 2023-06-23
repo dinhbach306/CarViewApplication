@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructures2.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -93,7 +93,7 @@ namespace Infrastructures2.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     CarTypeId = table.Column<int>(type: "int", nullable: false),
-                    CarBranchId = table.Column<int>(type: "int", nullable: false),
+                    CarBrandId = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Version = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
@@ -103,8 +103,8 @@ namespace Infrastructures2.Migrations
                 {
                     table.PrimaryKey("car_model_id", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_car_model_tbl_car_brand_tbl_CarBranchId",
-                        column: x => x.CarBranchId,
+                        name: "FK_car_model_tbl_car_brand_tbl_CarBrandId",
+                        column: x => x.CarBrandId,
                         principalTable: "car_brand_tbl",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -257,9 +257,9 @@ namespace Infrastructures2.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_car_model_tbl_CarBranchId",
+                name: "IX_car_model_tbl_CarBrandId",
                 table: "car_model_tbl",
-                column: "CarBranchId");
+                column: "CarBrandId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_car_model_tbl_CarTypeId",

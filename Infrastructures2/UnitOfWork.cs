@@ -6,16 +6,16 @@ namespace Infrastructures
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        private readonly ICarBranchRepository _carBranchRepository;
+        private readonly ICarBrandRepository _carBrandRepository;
 
         public UnitOfWork(ApplicationDbContext context,
-            ICarBranchRepository carBranchRepository)
+            ICarBrandRepository carBrandRepository)
         {
             _context = context;
-            _carBranchRepository = carBranchRepository;
+            _carBrandRepository = carBrandRepository;
         }
 
-        public ICarBranchRepository CarBranchRepository => _carBranchRepository;
+        public ICarBrandRepository CarBrandRepository => _carBrandRepository;
 
         public async Task<int> SaveChangesAsync()
         {
