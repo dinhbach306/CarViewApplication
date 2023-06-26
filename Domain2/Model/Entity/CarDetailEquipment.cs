@@ -1,4 +1,4 @@
-﻿namespace Domain.Model.Entity;
+﻿namespace Domain2.Model.Entity;
 
 public class CarDetailEquipment
 {

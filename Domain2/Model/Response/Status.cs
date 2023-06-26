@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Domain.Model.Response;
+namespace Domain2.Model.Response;
 
 public class Status
 {

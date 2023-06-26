@@ -1,4 +1,6 @@
-﻿namespace UniCar;
+﻿using Infrastructures2;
+
+namespace UniCar;
 
 public static class DependencyInjection
 {
@@ -8,5 +10,6 @@ public static class DependencyInjection
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddHttpContextAccessor();
+        
     }
 }

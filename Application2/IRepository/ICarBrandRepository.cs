@@ -1,6 +1,6 @@
-﻿using Domain.Model.Entity;
+﻿using Domain2.Model.Entity;
 
-namespace Application.IRepository;
+namespace Application2.IRepository;
 
 public interface ICarBrandRepository
 {

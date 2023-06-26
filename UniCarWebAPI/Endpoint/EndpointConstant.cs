@@ -6,6 +6,7 @@ public static  class EndpointConstant
 
     public static  class Car
     {
-        public const string CarBranchEndpoint = RootEndpoint + "/carBranch";
+        public const string CarBrandEndpoint = RootEndpoint + "/carBrand";
+        public const string CarTypeEndpoint = RootEndpoint + "/carType";
     }
 }

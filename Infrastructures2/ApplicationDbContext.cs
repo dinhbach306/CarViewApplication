@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using Domain.Model.Entity;
+using Domain2.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructures;
+namespace Infrastructures2;
 
 public class ApplicationDbContext : DbContext
 {

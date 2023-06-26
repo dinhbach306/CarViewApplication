@@ -1,9 +1,10 @@
-﻿using Application.IRepository;
-using Application.IService;
-using Domain.Exceptions;
-using Domain.Model.Entity;
-using Domain.Model.Request;
-using Infrastructures.Mapper;
+﻿using Application2.IRepository;
+using Application2.IService;
+using Domain2.Exceptions;
+using Domain2.Model.Entity;
+using Domain2.Model.Request;
+using Infrastructures2;
+using Infrastructures2.Mapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructures.Repository;

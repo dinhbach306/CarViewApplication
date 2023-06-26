@@ -1,15 +1,15 @@
 ﻿using System.Net;
-using Application.IService;
-using Domain.Model.Entity;
-using Domain.Model.Request;
-using Domain.Model.Response;
-using Infrastructures.Mapper;
+using Application2.IService;
+using Domain2.Model.Entity;
+using Domain2.Model.Request;
+using Domain2.Model.Response;
+using Infrastructures2.Mapper;
 using Microsoft.AspNetCore.Mvc;
 using UniCar.Endpoint;
 
 namespace UniCar.Controller;
 [ApiController]
-[Route(EndpointConstant.Car.CarBranchEndpoint)]
+[Route(EndpointConstant.Car.CarBrandEndpoint)]
 public class CarBrandController : ControllerBase
 {
    

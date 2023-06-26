@@ -1,6 +1,6 @@
-﻿using Domain.Model.Entity.Base;
+﻿using Domain2.Model.Entity.Base;
 
-namespace Domain.Model.Entity;
+namespace Domain2.Model.Entity;
 
 public class Car : BaseEntity
 {

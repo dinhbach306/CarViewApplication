@@ -1,6 +1,6 @@
-﻿using Domain.Model.Entity;
+﻿using Domain2.Model.Entity;
 
-namespace Application.IService;
+namespace Application2.IService;
 
 public interface IFileService
 {

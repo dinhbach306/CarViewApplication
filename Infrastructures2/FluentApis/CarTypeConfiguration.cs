@@ -1,8 +1,8 @@
-﻿using Domain.Model.Entity;
+﻿using Domain2.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructures.FluentApis;
+namespace Infrastructures2.FluentApis;
 
 public class CarTypeConfiguration : IEntityTypeConfiguration<CarType>
 {

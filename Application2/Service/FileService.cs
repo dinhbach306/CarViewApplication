@@ -1,8 +1,8 @@
-﻿using Application.IService;
+﻿using Application2.IService;
 using Azure.Storage.Blobs;
-using Domain.Model.Entity;
+using Domain2.Model.Entity;
 
-namespace Application.Service;
+namespace Application2.Service;
 
 public class FileService : IFileService
 {
