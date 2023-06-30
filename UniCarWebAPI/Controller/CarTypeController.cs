@@ -43,5 +43,49 @@ namespace UniCar.Controller
                 );
             }
         }
+
+
+        [HttpGet("getAllType")]
+        public Status GetAll()
+        {
+            try
+            {
+                var list = _carTypeService.GetCarTypes();
+
+                return new Status(HttpStatusCode.OK,
+                    "Success",
+                    list
+                );
+            }
+            catch (Exception e)
+            {
+                return new Status(HttpStatusCode.InternalServerError,
+                    "Failed",
+                    e.Message
+                );
+            }
+        }
+
+
+        [HttpGet("getAllTypeName")]
+        public Status GetAllTypeName()
+        {
+            try
+            {
+                var list = _carTypeService.GetAllCarTypeName();
+
+                return new Status(HttpStatusCode.OK,
+                    "Success",
+                    list
+                );
+            }
+            catch (Exception e)
+            {
+                return new Status(HttpStatusCode.InternalServerError,
+                    "Failed",
+                    e.Message
+                );
+            }
+        }
     }
 }

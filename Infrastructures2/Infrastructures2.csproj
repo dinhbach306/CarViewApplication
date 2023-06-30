@@ -24,5 +24,9 @@
     <ItemGroup>
       <ProjectReference Include="..\Application2\Application2.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Enum\" />
+    </ItemGroup>
 
 </Project>

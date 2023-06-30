@@ -17,7 +17,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<CarModel>? CarModels { get; set; }
     public DbSet<CarSpecs>? CarSpecs { get; set; }
     public DbSet<CarType>? CarTypes { get; set; }
-    
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         //Take all configurations of entities from Infrastructures.FluentAPIs
