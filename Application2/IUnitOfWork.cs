@@ -8,5 +8,6 @@ public interface IUnitOfWork
 {
     public ICarBrandRepository CarBrandRepository { get; }
     public ICarTypeRepository CarTypeRepository { get; }
+    public ICarModelRepository CarModelRepository { get; }
     public Task<int> SaveChangesAsync();
 }

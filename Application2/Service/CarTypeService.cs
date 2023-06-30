@@ -23,5 +23,17 @@ namespace Application2.Service
             await _unitOfWork.CarTypeRepository.Add(model);
             await _unitOfWork.SaveChangesAsync();
         }
+
+        public List<string> GetAllCarTypeName()
+        {
+            var typeList = _unitOfWork.CarTypeRepository.GetAllTypeName();
+            return typeList;
+        }
+
+        public List<CarType> GetCarTypes()
+        {
+            var typeList = _unitOfWork.CarTypeRepository.GetAll();
+            return typeList;
+        }
     }
 }

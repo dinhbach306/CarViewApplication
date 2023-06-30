@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace Application2.IService
 {
-    public interface ICarTypeService
+    public interface ICarModelService
     {
-        Task AddCarType(CarType model);
-
-        List<CarType> GetCarTypes();
-
-        List<string> GetAllCarTypeName();
+        Task AddCarModel(CarModel carModel);
     }
 }

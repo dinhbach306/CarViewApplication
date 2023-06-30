@@ -21,6 +21,8 @@ public static class DependencyInjection
         services.AddTransient<ICarBrandService, CarBrandService>();
         services.AddTransient<ICarTypeRepository, CarTypeRepository>();
         services.AddTransient<ICarTypeService, CarTypeService>();
+        services.AddTransient<ICarModelRepository, CarModelRepository>();
+        services.AddTransient<ICarModelService, CarModelService>();
         //FileService
         services.AddScoped(_ => new BlobServiceClient(config.GetConnectionString("AzureBlobStorage")));
         

@@ -31,5 +31,32 @@ namespace Infrastructures2.Repository
                 throw new BadRequestException($"Error: {ex.Message}");
             }
         }
+
+        public List<CarType> GetAll()
+        {
+            try
+            {
+                var list = _dbSet.ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException($"Error: {ex.Message}");
+            }
+        }
+
+        public List<string> GetAllTypeName()
+        {
+            try
+            {
+                var list = _dbSet.Select(t => t.Name)?.ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException($"Error: {ex.Message}");
+            }
+        }
+
     }
 }

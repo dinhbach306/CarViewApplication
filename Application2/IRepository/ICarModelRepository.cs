@@ -1,5 +1,4 @@
 ﻿using Domain2.Model.Entity;
-using Domain2.Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Application2.IRepository
 {
-    public interface ICarTypeRepository
+    public interface ICarModelRepository
     {
-        Task Add(CarType typeModel);
-
-        List<CarType> GetAll();
-        List<string> GetAllTypeName();
+        Task Add(CarModel carModel);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using System.Net;
 
 namespace Domain2.Model.Response;
 
